@@ -14,9 +14,20 @@
 // Returns: A boolean value. True for palindromes, false otherwise.
 bool is_palindrome(std::string str){
 
-    // Write your code here
+    if (str.empty()) return true;
 
-    return false;
+    auto s = str.begin();
+    auto e = str.end() - 1;
+
+    while (s < e) {
+        if (std::tolower(*s) != std::tolower(*e)) {
+            std::cout << std::tolower(static_cast<unsigned char>(*s)) << " + " << std::tolower(static_cast<unsigned char>(*e)) << std::endl;
+            return false;
+        }
+        s++;
+        e--;
+    }
+    return true;
 }
 
 // Main function

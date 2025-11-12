@@ -1,18 +1,21 @@
 #include "complex_num.h"
 
 complex_num::complex_num(double r, double i){
-    // Write your code here
+    real = r;
+    imag = i;
 }
 
 complex_num complex_num::operator +(complex_num w){
     complex_num z;
-    // Write your code here
+    z.real = real + w.real;
+    z.imag = imag + w.imag;
     return z;
 }
 
 complex_num complex_num::operator -(complex_num w){
     complex_num z;
-    // Write your code here
+    z.real = real - w.real;
+    z.imag = imag - w.imag;
     return z;
 }
 
@@ -29,5 +32,5 @@ complex_num complex_num::operator /(complex_num w){
 }
 
 void complex_num::print(std::ostream &os){
-    // Write your code here
+    os << real << " + i " << imag << std::endl;
 }

@@ -14,11 +14,20 @@
 //           arr: A pointer acting as the array to sort.
 //           n: The size of the array.
 // Returns: A boolean value: True on success, false otherwise.
-bool sort_array(int *arr, int n){
+void sort_array(int *arr, int n){
+    // bubble sort
+    if (n < 2)
+        return;
 
-    // Write your code here
-
-    return false;
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<(n-i-1); j++) {
+            if (arr[j] > arr[j+1]) {
+                int tmp = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
 }
 
 // Main function
